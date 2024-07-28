@@ -59,12 +59,12 @@ func NewCode(code int64, msg string, i18n string, meta map[string]string) Code {
 }
 
 var (
-	Ok                         = NewCode(0, "OK", "OK", nil)
-	UnknownAbnormality         = NewCode(1, "未知异常", "UnknownAbnormality", nil)
-	ServiceException           = NewCode(2, "服务异常", "ServiceException", nil)
-	InProgress                 = NewCode(3, "正在处理中", "InProgress", nil)
-	ParameterError             = NewCode(4, "参数错误", "ParameterError", nil)
-	AccessRestricted           = NewCode(5, "访问受限", "AccessRestricted", nil)
-	VisitsTooFrequent          = NewCode(6, "访问过于频繁", "VisitsTooFrequent", nil)
-	AccessResourceDoesNotExist = NewCode(7, "访问资源不存在", "AccessResourceDoesNotExist", nil)
+	Ok                      = NewCode(0, "OK", "OK", nil)
+	UnknownAbnormality      = NewCode(1, "未知异常", "UnknownAbnormality", nil)
+	ServiceException        = NewCode(2, "服务异常", "ServiceException", nil)
+	InProgress              = NewCode(3, "正在处理中", "InProgress", nil)
+	ParameterError          = NewCode(4, "参数错误", "ParameterError", nil)
+	AccessRestricted        = NewCode(5, "访问受限", "AccessRestricted", nil)
+	AccessTooFrequent       = NewCode(6, "访问过于频繁", "AccessTooFrequent", nil)
+	AccessResourceNotExists = NewCode(7, "访问资源不存在", "AccessResourceNotExists", nil)
 )
