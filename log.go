@@ -24,7 +24,7 @@ func InitLog(config *LogConfig) {
 	encoderConfig := zap.NewProductionEncoderConfig()
 	encoderConfig.TimeKey = "time"
 	encoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
-	encoderConfig.EncodeCaller = zapcore.FullCallerEncoder
+	encoderConfig.EncodeCaller = zapcore.ShortCallerEncoder
 	if config.Ansi {
 		encoderConfig.EncodeLevel = zapcore.CapitalColorLevelEncoder
 	}
