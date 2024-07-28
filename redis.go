@@ -21,7 +21,7 @@ func init() {
 	_RedisIns = make(map[string]*RedisIns)
 }
 
-func Init(config *RedisConfig, key ...string) {
+func InitRedis(config *RedisConfig, key ...string) {
 	client := redis.NewClient(&redis.Options{
 		Addr:     config.Url,
 		Password: config.Password,
