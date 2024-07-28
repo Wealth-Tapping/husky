@@ -178,3 +178,9 @@ func NewPagingData[T any](total int64, rows []*T) PagingData[T] {
 		Rows:  rows,
 	}
 }
+
+type ContextKey string
+
+var (
+	ContextKeyTraceId = ContextKey("TraceId")
+)

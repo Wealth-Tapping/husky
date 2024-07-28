@@ -40,41 +40,41 @@ func InitLog(config *LogConfig) {
 }
 
 func Debug(ctx context.Context, args ...interface{}) {
-	traceId := ctx.Value("TraceId").(string)
-	_LogIns.Sugar().With(zap.String("TraceId", traceId)).Debugln(args...)
+	traceId := ctx.Value(ContextKeyTraceId).(string)
+	_LogIns.Sugar().With(zap.String(string(ContextKeyTraceId), traceId)).Debugln(args...)
 }
 
 func Info(ctx context.Context, args ...interface{}) {
-	traceId := ctx.Value("TraceId").(string)
-	_LogIns.Sugar().With(zap.String("TraceId", traceId)).Infoln(args...)
+	traceId := ctx.Value(ContextKeyTraceId).(string)
+	_LogIns.Sugar().With(zap.String(string(ContextKeyTraceId), traceId)).Infoln(args...)
 }
 
 func Warn(ctx context.Context, args ...interface{}) {
-	traceId := ctx.Value("TraceId").(string)
-	_LogIns.Sugar().With(zap.String("TraceId", traceId)).Warnln(args...)
+	traceId := ctx.Value(ContextKeyTraceId).(string)
+	_LogIns.Sugar().With(zap.String(string(ContextKeyTraceId), traceId)).Warnln(args...)
 }
 
 func Error(ctx context.Context, args ...interface{}) {
-	traceId := ctx.Value("TraceId").(string)
-	_LogIns.Sugar().With(zap.String("TraceId", traceId)).Errorln(args...)
+	traceId := ctx.Value(ContextKeyTraceId).(string)
+	_LogIns.Sugar().With(zap.String(string(ContextKeyTraceId), traceId)).Errorln(args...)
 }
 
 func Debugf(ctx context.Context, format string, args ...interface{}) {
-	traceId := ctx.Value("TraceId").(string)
-	_LogIns.Sugar().With(zap.String("TraceId", traceId)).Debugf(format, args...)
+	traceId := ctx.Value(ContextKeyTraceId).(string)
+	_LogIns.Sugar().With(zap.String(string(ContextKeyTraceId), traceId)).Debugf(format, args...)
 }
 
 func Infof(ctx context.Context, format string, args ...interface{}) {
-	traceId := ctx.Value("TraceId").(string)
-	_LogIns.Sugar().With(zap.String("TraceId", traceId)).Infof(format, args...)
+	traceId := ctx.Value(ContextKeyTraceId).(string)
+	_LogIns.Sugar().With(zap.String(string(ContextKeyTraceId), traceId)).Infof(format, args...)
 }
 
 func Warnf(ctx context.Context, format string, args ...interface{}) {
-	traceId := ctx.Value("TraceId").(string)
-	_LogIns.Sugar().With(zap.String("TraceId", traceId)).Warnf(format, args...)
+	traceId := ctx.Value(ContextKeyTraceId).(string)
+	_LogIns.Sugar().With(zap.String(string(ContextKeyTraceId), traceId)).Warnf(format, args...)
 }
 
 func Errorf(ctx context.Context, format string, args ...interface{}) {
-	traceId := ctx.Value("TraceId").(string)
-	_LogIns.Sugar().With(zap.String("TraceId", traceId)).Errorf(format, args...)
+	traceId := ctx.Value(ContextKeyTraceId).(string)
+	_LogIns.Sugar().With(zap.String(string(ContextKeyTraceId), traceId)).Errorf(format, args...)
 }

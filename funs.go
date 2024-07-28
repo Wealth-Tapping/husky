@@ -4,6 +4,9 @@ import (
 	"context"
 	"runtime/debug"
 	"slices"
+	"strings"
+
+	uuid "github.com/satori/go.uuid"
 )
 
 func ToPoint[P any](p P) *P {
@@ -64,7 +67,7 @@ func Go(call func()) {
 			if err == nil {
 				return
 			}
-			Error(context.WithValue(context.Background(), "TraceId", ""), err)
+			Error(context.WithValue(context.Background(), ContextKeyTraceId, ""), err)
 			debug.PrintStack()
 		}()
 		call()
@@ -73,4 +76,12 @@ func Go(call func()) {
 
 func Reverse[S ~[]E, E any](s S) {
 	slices.Reverse(s)
+}
+
+func NewContext() context.Context {
+	return context.WithValue(context.Background(), ContextKeyTraceId, strings.ReplaceAll(uuid.NewV4().String(), "-", ""))
+}
+
+func NewContextWithParent(parent context.Context) context.Context {
+	return context.WithValue(parent, ContextKeyTraceId, strings.ReplaceAll(uuid.NewV4().String(), "-", ""))
 }
